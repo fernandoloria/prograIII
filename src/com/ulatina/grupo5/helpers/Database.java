@@ -7,5 +7,5 @@ public class Database {
     //public static final String PASS = "1230";//Joseph Granados
     public static final String PASS = "vetealaversh";//Aaron Oviedo
     public static final String DRIVER = "com.mysql.jdbc.Driver";
-//para el commit 
+
 }
