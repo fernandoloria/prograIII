@@ -4,6 +4,7 @@ import com.ulatina.grupo5.dao.BaseDAO;
 import com.ulatina.grupo5.helpers.Conexion;
 import com.ulatina.grupo5.modelo.Bookeo;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -35,10 +36,10 @@ public class BookeoDAOImpl implements BaseDAO{
             
             ps.setInt(1,p.getTicket());
             ps.setString(2, p.getEmail());
-            ps.setDate(3, p.getFechaCompra());
-            ps.setDate(4, p.getFechaVisita());
+            ps.setDate(3, (Date) p.getFechaCompra());
+            ps.setDate(4, (Date) p.getFechaVisita());
             ps.setDouble(5, p.getTotalVenta());
-            ps.setInt(6, p.getPaseEspecia());
+            ps.setBoolean(6, p.isPaseEspecial());
            
             
             int registros = ps.executeUpdate();
@@ -73,10 +74,11 @@ public class BookeoDAOImpl implements BaseDAO{
 
             ps.setInt(1,p.getTicket());
             ps.setString(2, p.getEmail());
-            ps.setDate(3, p.getFechaCompra());
-            ps.setDate(4, p.getFechaVisita());
-            ps.setDouble(5, p.getTicket());
-            ps.setBooleano(6, p.getPaseEspecial());
+            ps.setDate(3, (Date) p.getFechaCompra());
+            ps.setDate(4, (Date) p.getFechaVisita());
+            ps.setDouble(5, p.getTotalVenta());
+            ps.setBoolean(6, p.isPaseEspecial());
+           
            
             int registros = ps.executeUpdate();
             
@@ -109,7 +111,7 @@ public class BookeoDAOImpl implements BaseDAO{
             con = conectar.getConnection();
             ps = con.prepareStatement(sql);
             
-            ps.setInt(1,p.getBookeo());
+            ps.setInt(1,p.getTicket());
             
             int registros = ps.executeUpdate();
             
@@ -167,5 +169,4 @@ public class BookeoDAOImpl implements BaseDAO{
         }
         
     }
-    
 }
