@@ -103,7 +103,7 @@ public class BookeoDAOImpl implements BaseDAO{
         
         p = (Bookeo) obj;
         
-        String sql = "DELETE FROM persona WHERE idAtracciones = ?";
+        String sql = "DELETE FROM bookeo WHERE ticket = ?";
         
         try {
             
@@ -138,7 +138,7 @@ public class BookeoDAOImpl implements BaseDAO{
         String[] registros = new String[titulos.length];
         DefaultTableModel model = new DefaultTableModel(null, titulos);
         
-        String sql = "select * from Atracciones";
+        String sql = "select * from bookeo";
         
         try {
             
