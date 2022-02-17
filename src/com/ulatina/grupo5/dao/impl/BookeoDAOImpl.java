@@ -76,7 +76,7 @@ public class BookeoDAOImpl implements BaseDAO{
             ps.setDate(3, p.getFechaCompra());
             ps.setDate(4, p.getFechaVisita());
             ps.setDouble(5, p.getTicket());
-            ps.setInt(6, p.getEdadMin());
+            ps.setBooleano(6, p.getPaseEspecial());
            
             int registros = ps.executeUpdate();
             
